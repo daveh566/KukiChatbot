@@ -1,2 +1,4 @@
 pyrogram
 requests
+emoji
+regex
