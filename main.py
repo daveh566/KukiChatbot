@@ -70,11 +70,12 @@ async def start(_, message):
 
 
 
-@nelly.on_message(
-    filters.regex("Nelly|nelly")
+@kuki.on_message(
+    filters.regex("Joey|joey")
     & ~filters.bot
     & ~filters.reply
     & ~filters.edited
+)
 )
 async def aspirer(client, message):
     msg = message.text
@@ -120,6 +121,25 @@ async def aspirer(client, message):
             test = test.text
         except:
             return
-            await message.reply_text(Yes,Hey))
+
+    # test = emoji.demojize(test.strip())
+
+    test = nelly
+    test = Nelly
+    response = await test, message.from_user.id if message.from_user else 0
+    response = Nelly
+
+    pro = response
+    if not "en" in lan and not lan == "":
+        try:
+            pro = translator.translate(pro, dest=lan)
+            pro = pro.text
+        except Exception:
+            return
+    try:
+        await kuki.send_chat_action(message.chat.id, "typing")
+        await message.reply_text(pro)
+    except CFError:
+        return
 
 kuki.run()
