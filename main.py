@@ -76,7 +76,6 @@ async def start(_, message):
     & ~filters.reply
     & ~filters.edited
 )
-)
 async def aspirer(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
